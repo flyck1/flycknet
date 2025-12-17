@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הפורטל האישי - שיבוץ בצה"ל</title>
+    <style>
+        :root {
+            --primary: #2c3e50; /* כחול כהה */
+            --secondary: #3498db; /* כחול בהיר */
+            --accent: #e67e22; /* כתום להדגשות */
+            --bg: #f4f6f7;
+            --text: #333;
+            --white: #ffffff;
+            --success-bg: #d4edda;
+            --success-text: #155724;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        /* Header Area */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 { margin: 0; font-size: 2.2rem; font-weight: 700; }
+        header p { margin-top: 10px; opacity: 0.9; font-size: 1.1rem; }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px; /* רחב יותר כדי להכיל את הטבלה */
+            margin: -30px auto 2rem;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Summary Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary);
+        }
+
+        .card.highlight {
+            border-top-color: var(--accent);
+            background-color: #fffdf9;
+        }
+
+        .card h3 { margin-top: 0; color: var(--primary); }
+        .card ul { padding-right: 1.2rem; }
+
+        /* Detailed Table Styling */
+        .table-wrapper {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden; /* Round corners */
+            overflow-x: auto; /* Scroll on mobile */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px; /* מבטיח שהטבלה לא תתכווץ מדי */
+        }
+
+        thead {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        th { font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
+        
+        /* Column Widths */
+        th:nth-child(1) { width: 12%; } /* תפקיד */
+        th:nth-child(2) { width: 12%; } /* אוכלוסייה */
+        th:nth-child(3) { width: 18%; } /* בסיס */
+        th:nth-child(4) { width: 30%; } /* מהות */
+        th:nth-child(5) { width: 8%; }  /* פרופיל */
+        th:nth-child(6) { width: 20%; } /* התאמה */
+
+        /* Rows styling */
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background-color: #f9f9f9; }
+
+        /* Recommended Row Styling */
+        .recommended-row {
+            background-color: #e8f6f3 !important;
+            border-left: 5px solid var(--success-text);
+        }
+        .recommended-row td { color: var(--success-text); }
+        .recommended-row strong { font-size: 1.1em; }
+
+        /* Stars & Badges */
+        .stars { color: #f1c40f; letter-spacing: 2px; }
+        .profile-badge {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>הפורטל האישי: תכנון שירות בצה"ל</h1>
+        <p>ניתוח תפקידים מותאם לבוגרת מגמת רפואה (10 יח"ל) ומדריכת מד"א</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="cards-grid">
+            <div class="card">
+                <h3>👤 הפרופיל שלי</h3>
+                <ul>
+                    <li><strong>רקע לימודי:</strong> מגמת רפואה (10 יח"ל).</li>
+                    <li><strong>רקע מקצועי:</strong> מדריכת קורס 60 במד"א.</li>
+                    <li><strong>חוזקות:</strong> הדרכה פרונטלית, ידע קליני, ניסיון שטח.</li>
+                </ul>
+            </div>
+            <div class="card highlight">
+                <h3>🏆 ההמלצה המובילה</h3>
+                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">מדריכת חר"פ (קמ"סית)</p>
+                <p>התפקיד היחיד שמשלב את שלושת העולמות שלך: רפואה, הדרכה ושירות משמעותי.</p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>שם התפקיד</th>
+                        <th>עם מי עובדים?</th>
+                        <th>אופי שירות ומיקום</th>
+                        <th>מהות התפקיד (היום-יום)</th>
+                        <th>פרופיל</th>
+                        <th>מידת התאמה לרקע</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="recommended-row">
+                        <td><strong>מדריכת חר"פ (קמ"סית)</strong><br><small>חיל הרפואה</small></td>
+                        <td>חיילים (חניכים בקורס חובשים/רופאים)</td>
+                        <td><strong>בסיס סגור</strong><br>עיר הבה"דים (נגב)<br>תנאים מעולים, חברה איכותית.</td>
+                        <td><strong>הדרכה מקצועית נטו.</strong> הכשרת הצוותים הרפואיים של צה"ל. העברת שיעורים עיוניים, תרגול סימולציות טראומה, החייאה וניהול אר"ן.</td>
+                        <td><span class="profile-badge">45+</span></td>
+                        <td>
+                            <span class="stars">⭐⭐⭐⭐⭐</span><br>
+                            <strong>התאמה מושלמת.</strong> מימוש מלא של הידע הרפואי וכישורי ההדרכה בבמה יוקרתית.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>מש"קית הוראה</strong><br><small>חיל החינוך</small></td>
+                        <td>חיילים (השלמת בגרויות / עולים / מקא"ם)</td>
+                        <td><strong>משולב (תלוי שיבוץ)</strong><br>בסיסים סגורים (כמו חוות השומר) או פתוחים (מרכזי השכלה בפיקודים).</td>
+                        <td><strong>חינוך והעצמה.</strong> הוראת מקצועות ליבה (היסטוריה, אזרחות) או עברית. חיזוק תחושת מסוגלות לאוכלוסיות מוחלשות.</td>
+                        <td><span class="profile-badge">25+</span></td>
+                        <td>
+                            <span class="stars">⭐⭐⭐</span><br>
+                            מממש את יכולת העמידה מול כיתה, אך ללא הפן הרפואי המקצועי.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>מורה חיילת</strong><br><small>חיל החינוך</small></td>
+                        <td>אזרחים (נוער בסיכון, פנימיות, עולים)</td>
+                        <td><strong>דירת שירות (אזרחי)</strong><br>מגורים בקהילה בערים שונות בארץ, ניהול עצמאי של משק בית.</td>
+                        <td><strong>עבודה חברתית בקהילה.</strong> דמות "אחות גדולה", סיוע לימודי ורגשי. גשר בין הצבא לחברה האזרחית.</td>
+                        <td><span class="profile-badge">25+</span></td>
+                        <td>
+                            <span class="stars">⭐⭐</span><br>
+                            מתאים אם מחפשים "הפסקה" מהעולם הרפואי ומהמסגרת הצבאית הנוקשה.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>מש"קית גחל"ת</strong><br><small>משטרה צבאית/אכ"א</small></td>
+                        <td>חיילים כלואים (עריקים/משמעת)</td>
+                        <td><strong>בסיס סגור</strong><br>כלא צבאי "נווה צדק" (ליד בית ליד). סביבת כליאה.</td>
+                        <td><strong>טיפול ושיקום.</strong> אבחון וראיונות עומק עם כלואים לצורך החזרה לשירות תקין. עבודה טיפולית-משרדית.</td>
+                        <td><span class="profile-badge">45+</span></td>
+                        <td>
+                            <span class="stars">⭐</span><br>
+                            אין קשר לרקע הרפואי או להדרכה. מתאים לכיוון טיפולי/פסיכולוגי.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>מדריכת כלואים</strong><br><small>משטרה צבאית</small></td>
+                        <td>חיילים כלואים</td>
+                        <td><strong>בסיס סגור (משמרות)</strong><br>כלא צבאי "נווה צדק".</td>
+                        <td><strong>פיקוד ומשמעת.</strong> שמירה על הסדר בכלא, אכיפת חוקים, ליווי כלואים וניהול לו"ז.</td>
+                        <td><span class="profile-badge">64+</span></td>
+                        <td>
+                            <span class="stars">⭐</span><br>
+                            תפקיד שיטורי/פיקודי נטו. אינו רלוונטי לכישורים הייחודיים שלך.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>מש"קית מתנדבים</strong><br><small>אכ"א</small></td>
+                        <td>מלש"בים וחיילים בעלי פטור רפואי</td>
+                        <td><strong>בסיס פתוח (יומיות)</strong><br>לרוב במיטב (תל השומר), הקריה או מפקדות פיקודים.</td>
+                        <td><strong>בירוקרטיה וליווי.</strong> טיפול בתיקים רפואיים, ועדות ושיבוץ מתנדבים. עבודה משרדית.</td>
+                        <td><span class="profile-badge">25+</span></td>
+                        <td>
+                            <span class="stars">⭐⭐</span><br>
+                            יתרון קל בהבנת הבעיות הרפואיות, אך התפקיד הוא מנהלי וללא הדרכה.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>נבנה ונוהל על ידי Gemini AI | עודכן לאחרונה: דצמבר 2025</p>
+    </footer>
+
+</body>
+</html>
